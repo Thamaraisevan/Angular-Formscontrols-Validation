@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "angular-formcontrols-validation": {
+      "projectType": "library",
+      "root": "projects/angular-formcontrols-validation",
+      "sourceRoot": "projects/angular-formcontrols-validation/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular-formcontrols-validation/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-formcontrols-validation/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-formcontrols-validation/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/angular-formcontrols-validation/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "8e7b3f64-9bd9-4be9-be07-d95a486ec0ab"
+  }
+}
